@@ -1,0 +1,20 @@
+{
+  "description": "an extendable distributed system written on top of node.js technology",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "union": "0.3.0",
+    "flatiron": "0.2.6"
+  },
+  "devDependencies": {
+    "api-easy": "0.3.2",
+    "vows": "0.6.1"
+  },
+  "scripts": {
+    "test": "vows --spec",
+    "start": "node app.js"
+  },
+  "name": "yael",
+  "author": "Tsur, Schneider & Shan",
+  "homepage": "https://github.com/qballer/tssDas"
+}

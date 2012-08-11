@@ -1,0 +1,33 @@
+Yael Todo:
+Install node.js plugin for sublime text 2. (Done)
+start a local project. (Done)
+submit project to git hub (Done)	
+figure out polymorphsm and package loading.
+	install used packages () {npm install flatiron(web pages),  npm install binaryjs(web-sockets),  npm install nano(couch-db).)}
+	
+Design Divider API and buffer control. 
+Write a simple test unit.
+Desgin Assmbler API and result aggrigation. 
+Write a simple test unit.
+Desgin Algorithm API
+Write a simple test unit.
+perform api loading.
+Write a workflow mechanisem to perform basic operations.
+	Support stop/start
+	multi algorithm ready (?)	
+Write a simple test for it. 	
+Bind mechanizem to running the API.
+Run previouse test.
+Binde to couche DB.
+
+Important links: 
+http://nodebits.org/distilled-patterns
+http://blog.mixu.net/2011/02/02/essential-node-js-patterns-and-snippets/
+http://howtonode.org/control-flow
+http://caolanmcmahon.com/posts/writing_for_node_and_the_browser/
+
+generic que consumption.
+
+Mechanizm layout:
+Create a mulity que executaion model based on the pile design pattern and the numbered call back.
+Create a generic mechanism to run minimum to maximum ratio between ques. 
