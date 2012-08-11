@@ -56,13 +56,18 @@ Uploading ALgorithm  (There is no algorithm running)
 	- Route result aggrigation 
 
 Real Time pile: 
-	- Give Page - Just Serv.(Client or Admin).
-	- Get Slice : Do I have one handy? Serv : Create and Serv.
+	- Give Page:  Just Serv.(Client or Admin). (Not a pile handded by Express) 
+	- Give Slice: Do I have one handy? Serv : Create and Serv.
 	- Get Result: Write it to DB, add to batch loading. 
+	- Feed Result: 
+
 
 Batch Time piles : 
-	- Agrigrate Result. Read From DB.  
-	- Create Slice if a pile isn't marked as done.
-	- 
+	- Agrigrate Result. Feed Results, read from a result from DB. 
+	- Create Slice if a pile isn't marked as done, read slices from DB.
+
+Slice Pile: Created from user calledback with a ready slice. 
+Result Pile 
+
 
 
