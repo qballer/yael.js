@@ -12,4 +12,6 @@ logs
 results
 node_modules
 
+tasks.txt
+todo.txt
 npm-debug.log
