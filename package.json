@@ -15,6 +15,6 @@
     "start": "node app.js"
   },
   "name": "yael",
-  "author": "Tsur, Schneider & Shan",
+  "author": "Tsur, Schneider & Shani",
   "homepage": "https://github.com/qballer/tssDas"
 }
