@@ -1,5 +1,6 @@
 {
 	"pathToClient":"./client/client.js",
 	"pathToAssembler":"./assembler/assembler.js",
-	"pathToDivider":"./divider/divider.js"
+	"pathToDivider":"./divider/divider.js",
+	"pathToData":"./data"
 }

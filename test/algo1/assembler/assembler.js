@@ -7,14 +7,18 @@ var assembler = function (){
 	
 	// prepare finalresult
 	// when do call finalResultCB from msg box.
-	that.finalResult = function(){};
+	that.finalResult = function(){
+		
+	};
 
 	// confirems to the AssemMessageBox interface
 	that.AssemMessageBox = AssemMessageBox;
 	
 	// startup assembler.
 	// call initCB.
-	that.init = function (){};
+	that.init = function (){
+		
+	};
 
 	return that;
 };
