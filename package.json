@@ -5,7 +5,6 @@
   "dependencies": {
     "union": "0.3.0",
     "flatiron": "0.2.6",
-    "gm":"1.4.2",
     "socket.io":".9.10"
   },
   "devDependencies": {
