@@ -1,0 +1,8 @@
+1. this sever requires  node-formidable - https://github.com/felixge/node-formidable
+	-> npm install formidable@latest
+	
+2. start server -> node index.js
+
+3. localhost:8000/ -> index page;
+
+4. localhost:8000/admin -> admin page- uploading a zip file saved on server.
