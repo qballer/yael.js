@@ -1,0 +1,25 @@
+<html>
+<title>Yael.js Admin Console</title>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  
+	<script language="Javascript">
+		loadFile = function(){
+			var file = document.loadFilesForm.filename.value;
+			if (file != ""){
+				var loadedFiles = '<div>' + file + '<input type="button" value="Start" />' + '<input type="button" value="Stop" />' + '</div>';
+				document.getElementById("loadedFiles").innerHTML += loadedFiles;
+				document.loadFilesForm.filename.value = "";
+			}
+		};
+	</script>
+</head>
+<body>
+    <p>
+		<h1>Yael.js Admin Console</h1>
+	</p>
+    <form name="loadFilesForm" action="/upload" enctype="multipart/form-data" method="post">
+    	<input type="file" name="filename" multiple="multiple">
+    	<input type="submit" value="Upload file" title="Click to load selected file" onclick="loadFile()"/>
+    </form>
+</body>
+</html>
