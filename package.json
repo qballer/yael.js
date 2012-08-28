@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "union": "0.3.0",
-    "flatiron": "0.2.6",
-    "socket.io":"0.9.10"
+    "union": ">=0.3.0",
+    "flatiron":">=0.2.6",
+    "socket.io":">=0.9.10"
   },
   "devDependencies": {
     "api-easy": "0.3.2",
