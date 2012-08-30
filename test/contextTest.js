@@ -2,7 +2,8 @@ var context = require("../lib/context/context"),
 	util = require('util'),
 	path = require ('path'),
 	testUtil =  require('./testUtil'),
-	broadway = require('../broadway');
+	broadway = require('broadway'),
+	trio = require("../lib/api/trioPlugin");
 var app = new broadway.App();
 
 // Passes the second argument to `helloworld.attach`.
@@ -22,7 +23,7 @@ var trio = util.yaelUtil.loadJSONfile("./algo1/trio.json");
 
 for (var key in trio){
 	ctxt[key] = path.resolve( "./algo1/" + trio[key]);
-	console.log(ctxt[key]);
+	
 }
 
 ctxt.writeToDB = function (cb, slice){
@@ -40,4 +41,9 @@ ctxt.grandHalt = function (file){
 };
 ctxt.errorHalt = ctxt.grandHalt;
 
-app.use(require("../lib/trioPlugin"),ctxt) ;
+app.use(new require("../lib/api/trioPlugin"),ctxt) ;
+app.init(function(){
+	console.log("Init done");
+});
+//console.log("Session: %j", app);
+

@@ -22,6 +22,7 @@ var divider = function (){
 	//call getSliceZeroCB.
 	// all init action should be done.
 	that.getSliceZero = function(){
+		console.log("Get Silice O");
 		if (sliceZero === null){
 			sliceZero = that.DivMessageBox.createSlice();
 		}
