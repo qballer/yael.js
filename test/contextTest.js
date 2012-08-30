@@ -1,7 +1,13 @@
 var context = require("../lib/context/context"),
 	util = require('util'),
 	path = require ('path'),
-	testUtil =  require('./testUtil');
+	testUtil =  require('./testUtil'),
+	broadway = require('../broadway');
+var app = new broadway.App();
+
+// Passes the second argument to `helloworld.attach`.
+
+
 
 var ctxt = new context();
 
@@ -33,3 +39,5 @@ ctxt.grandHalt = function (file){
 	console.log(file);
 };
 ctxt.errorHalt = ctxt.grandHalt;
+
+app.use(require("../lib/trioPlugin"),ctxt) ;
