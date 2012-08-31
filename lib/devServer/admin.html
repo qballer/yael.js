@@ -1,25 +1,67 @@
+<!DOCTYPE html>
 <html>
 <title>Yael.js Admin Console</title>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  
-	<script language="Javascript">
-		loadFile = function(){
-			var file = document.loadFilesForm.filename.value;
-			if (file != ""){
-				var loadedFiles = '<div>' + file + '<input type="button" value="Start" />' + '<input type="button" value="Stop" />' + '</div>';
-				document.getElementById("loadedFiles").innerHTML += loadedFiles;
-				document.loadFilesForm.filename.value = "";
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io.connect('http://localhost');
+
+		socket.on('server2admin', function(data) {
+      		console.log(data);
+    	});
+
+
+	</script>
+	<script type="text/javascript">
+		function init() {
+			document.getElementById('loadFilesForm').onsubmit=function() {
+				document.getElementById('loadFilesForm').target = 'upload_target'; //'loadFilesForm' is the name of the iframe
 			}
+		}
+		window.onload=init;
+
+		var file;
+
+		loadFile = function(){
+			file = document.getElementById('loadFilesForm').filename.value;
+			if (file != ""){
+				var loadedFiles = '<div>' + file + 
+				'<input type="button" id="start" value="Start" title="Click to say Hello to server" onclick="sayHello()"/>' + 
+				'<input type="button" id="stop" value="Stop" disabled="disabled"/>' + 
+				'</div>';
+				document.getElementById("loadedFiles").innerHTML = loadedFiles;
+				document.getElementById('loadFilesForm').filename.value = "";
+			}
+		};
+
+		sayHello = function(){
+			console.log('in sayHello');
+  			socket.emit('adminConnected', { data: 'HelloFromAdmin' });
+  			var loadedFiles = '<div>' + file + 
+				'<input type="button" id="start" value="Start" disabled="disabled" onclick="sayHello()"/>' + 
+				'<input type="button" id="stop" value="Stop"/>' + 
+				'</div>';
+				document.getElementById("loadedFiles").innerHTML = loadedFiles;    	
 		};
 	</script>
 </head>
 <body>
     <p>
 		<h1>Yael.js Admin Console</h1>
+		loaded file will be saved as "/home/user/tmp/test.zip"
 	</p>
-    <form name="loadFilesForm" action="/upload" enctype="multipart/form-data" method="post">
-    	<input type="file" name="filename" multiple="multiple">
+    <form id="loadFilesForm" name="loadFilesForm" action="/upload" enctype="multipart/form-data" method="post">
+    	<input type="file" name="filename" id="file" accept="application/*" size="40">
     	<input type="submit" value="Upload file" title="Click to load selected file" onclick="loadFile()"/>
-    </form>
+    	<iframe id="upload_target" name="upload_target" src="" style="width:0;height:0;border:0px solid #fff;"></iframe>
+	</form>
+	<br />
+    
+    <fieldset>
+	<legend>Loaded Algorithm</legend>
+	<div id="loadedFiles"> No loaded algorithm</div>
+	</fieldset>
+    
 </body>
 </html>
