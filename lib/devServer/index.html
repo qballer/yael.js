@@ -9,27 +9,23 @@
 
 <p id ="greeting"> Hello and welcome to Yael.js project. thank you for participating</p>
 
-<p id="instruction">to stop participation click the button bellow</p>
+<p id="instruction">to start participating click the button bellow</p>
 
-<button type="button" id ="stopButton" onclick="stop()">STOP</button>
+<div id="btnStart">
+	<button type="button" id ="startButton" onclick="start()">START</button>
+</div>
 
-<p id = "stopText"></p>
-
-<p id ="scriptedText"></p>
+<p id = "statusText"></p>
 
 <textarea rows="20" cols="70" id="consoleView"  readonly="readonly"></textarea>
 
 <button type="button" id ="addLineButton" onclick="addLine()">add line</button>
 
-<script type="text/javascript">
-	document.getElementById("scriptedText").innerHTML="this text created by script!!";
-</script>
-
 <script>
-function stop()
+function start()
 {
-document.getElementById("stopText").innerHTML="Stop button clicked!";
-document.getElementById("stopButton").innerHTML="stoped"
+document.getElementById("statusText").innerHTML="Process Started!";
+document.getElementById("btnStart").innerHTML= '<button type="button" id ="startButton" onclick="start()" disabled="disabled">START</button>'
 };
 
 function addLine(){
