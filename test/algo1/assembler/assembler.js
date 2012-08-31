@@ -15,7 +15,7 @@ var assembler = function (){
 			proccesResultCB();
 		}
 	};
-	
+		
 	// prepare finalresult
 	// when do call finalResultCB from msg box.
 	that.finalResult = function(){
