@@ -17,7 +17,7 @@ var divider = function (){
 			that.DivMessageBox.doneCB();
 		}
 	};
-
+	
 	//provide slice zero for system.
 	//call getSliceZeroCB.
 	// all init action should be done.

@@ -9,9 +9,7 @@ var app = new broadway.App();
 // Passes the second argument to `helloworld.attach`.
 
 
-
 var ctxt = new context();
-
 var networkSlices = {};
 
 util.yaelUtil = new testUtil();
@@ -23,7 +21,6 @@ var trio = util.yaelUtil.loadJSONfile("./algo1/trio.json");
 
 for (var key in trio){
 	ctxt[key] = path.resolve( "./algo1/" + trio[key]);
-	
 }
 
 ctxt.writeToDB = function (cb, slice){
@@ -39,7 +36,17 @@ ctxt.takeResultFromNetwork = function(cb, slice){
 ctxt.grandHalt = function (file){
 	console.log(file);
 };
+
 ctxt.errorHalt = ctxt.grandHalt;
+
+/*var fileLoader = require('../lib/api/etc/tssDasLoader');
+fileLoader = new fileLoader();
+var divInterface = require('../lib/api/trioAPI/divider.js');
+var code = fileLoader.fileLoad(ctxt.pathToDivider, new divInterface());
+if (code === null){
+	console.log("BAD");
+}*/
+
 
 app.use(new require("../lib/api/trioPlugin"),ctxt) ;
 app.init(function(){
