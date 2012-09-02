@@ -8,10 +8,10 @@ var divider = function (){
 	that.divide = function (){
 		var slice  = that.DivMessageBox.createSlice();
 		if (times >0){
-			for (var index = 0;index<buffer.length; ++index){
+			for (var index = 0; index<slice.buffer.length; ++index){
 				slice.buffer[index] = 1;
 			}
-			sliceCB(slice);
+			that.DivMessageBox.sliceCB(slice);
 			--times;
 		} else{
 			that.DivMessageBox.doneCB();

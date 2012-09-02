@@ -5,7 +5,7 @@ var algorithm = function (){
 	// slice confirmes to the nakedslice interface.
 	// call resultCB when done.
 	that.procceSlice = function (slice){
-		for(var index = 0; i<slice.buffer.length; ++index){
+		for(var index = 0; index<slice.buffer.length; ++index){
 			slice.buffer[index] -= 1;
 		}
 		that.AlgoMessageBox.resultCB(slice);
