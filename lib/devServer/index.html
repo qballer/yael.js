@@ -3,37 +3,29 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  
 	<title>Yael.js</title>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="contextScript.js"></script>
+	<script src="nakedSliceScript.js"></script>
+	<script src="clientScript.js"></script>
 </head>
 <body>
-<h1>YAEL.JS</h1>
+	<h1>YAEL.JS</h1>
 
-<p id ="greeting"> Hello and welcome to Yael.js project. thank you for participating</p>
+	<p id ="greeting"> Hello and welcome to Yael.js project. thank you for participating</p>
 
-<p id="instruction">to start participating click the button bellow</p>
+	<p id="instruction">to start participating click the button bellow</p>
 
-<div id="btnStart">
-	<button type="button" id ="startButton" onclick="start()">START</button>
-</div>
+	<div id="btnStart">
+		<button type="button" id ="startButton" onclick="start()">START</button>
+	</div>
 
-<p id = "statusText"></p>
+	<p id = "statusText"></p>
 
-<textarea rows="20" cols="70" id="consoleView"  readonly="readonly"></textarea>
+	<textarea rows="20" cols="70" id="consoleView"  readonly="readonly"></textarea>
 
-<button type="button" id ="addLineButton" onclick="addLine()">add line</button>
+	<button type="button" id ="addLineButton" onclick="addLine()">add line</button>
 
-<script>
-function start()
-{
-document.getElementById("statusText").innerHTML="Process Started!";
-document.getElementById("btnStart").innerHTML= '<button type="button" id ="startButton" onclick="start()" disabled="disabled">START</button>'
-};
+	<button type="button" id ="getSliceButton" onclick="getSlice()">get slice</button>
 
-function addLine(){
-	document.getElementById("consoleView").innerHTML+="newline\n";
-};
-</script>
-
-
-
-</body>
+	</body>
 </html>
