@@ -13,7 +13,7 @@ var algorithm = function (){
 
 	//objects which linkes to system.
 	//confirms to the AlgoMessageBox interface.
-	that.AlgoMessageBox = AlgoMessageBox;
+	that.AlgoMessageBox = null;
 	
 	// handdle slice Zero and perform init
 	// call slice zeroCB
