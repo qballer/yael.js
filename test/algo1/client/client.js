@@ -1,4 +1,4 @@
-var algorithm = function (AlgoMessageBox){
+var algorithm = function (){
 	var that = {};
 	that.sliceZero = null;
 	// Will be called to run algorithm on slice.

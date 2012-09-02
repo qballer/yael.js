@@ -29,6 +29,10 @@ var divider = function (){
 		that.DivMessageBox.getSliceZeroCB(sliceZero);
 	};
 
+	that.test = function (){
+		console.log("Test OK!");
+	};
+
 	//confirms to the DivMessageBox interface.
 	that.DivMessageBox = null;
 	
