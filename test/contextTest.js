@@ -10,7 +10,7 @@ var app = new broadway.App();
 
 
 var ctxt = new context();
-var networkSlices = {};
+var networkSlices = [];
 
 util.yaelUtil = new testUtil();
 console.log("context unit test");
@@ -23,8 +23,9 @@ for (var key in trio){
 	ctxt[key] = path.resolve( "./algo1/" + trio[key]);
 }
 
+var times = 0;
 ctxt.writeToDB = function (cb, slice){
-	console.log(slice);
+	console.log(times++);
 	cb(slice);
 };
 ctxt.giveToNetwork = function (slice){
@@ -55,3 +56,7 @@ app.init(function(){
 });
 //console.log("Session: %j", app);
 
+setInterval(function(){
+	app.dividerWrapper.pile.run();
+	app.assemblerWrapper.pile.run();
+},5);
