@@ -6,8 +6,8 @@
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="contextScript.js"></script>
 	<script src="nakedSliceScript.js"></script>
-	<script src="client.js"></script>
 	<script src="algoMessageBoxScript.js"></script>
+	<script src="client.js"></script>
 	<script src="clientScript.js"></script>
 
 </head>
@@ -18,8 +18,9 @@
 
 	<p id="instruction">to start participating click the button bellow</p>
 
-	<div id="btnStart">
+	<div id="buttons">
 		<button type="button" id ="startButton" onclick="start()">START</button>
+		<button type="button" id ="stopButton" onclick="stop()" disabled="disabled">STOP</button>
 	</div>
 
 	<p id = "statusText"></p>
