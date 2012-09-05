@@ -24,11 +24,11 @@ for (var key in trio){
 }
 
 var times = 0;
-ctxt.writeToDB = function (cb, slice){
+ctxt.writeToDB = function (slice){
 	console.log(times++);
-	cb(slice);
 };
 ctxt.giveToNetwork = function (slice){
+	debugger;
 	networkSlices.push(slice);
 };
 ctxt.takeResultFromNetwork = function(cb, slice){
@@ -58,5 +58,10 @@ app.init(function(){
 
 setInterval(function(){
 	app.dividerWrapper.pile.run();
-	app.assemblerWrapper.pile.run();
+	if (networkSlices.length !==0 ){
+		app.assemblerWrapper.pile.run();
+	}else{
+		console.log("Still Zero");
+	}
+		
 },5);

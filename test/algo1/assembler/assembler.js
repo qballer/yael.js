@@ -5,13 +5,13 @@ var assembler = function (){
 	// recieve a result to process/aggrigate
 	// slice confirms to the nakedSlice interface
 	that.processResult = function (slice){
-		console.log("Assembler" + slice.buffer);
+		console.log("Assembler" + slice);
 		console.log("Assembler number" + num);
 		++num;
 		if (num >=  100){
 			setTimeout(0, that.finalResult);
 		}else{
-			proccesResultCB();
+			that.AssemMessageBox.proccesResultCB();
 		}
 	};
 		
