@@ -1,7 +1,6 @@
 var assembler = function (){
 	var that = {};
 	var num = 0;
-
 	
 	// recieve a result to process/aggrigate
 	// slice confirms to the nakedSlice interface
