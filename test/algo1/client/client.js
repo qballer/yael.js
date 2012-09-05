@@ -14,7 +14,7 @@ var algorithm = function (){
 			else{
 				resultSlice[i]=0;
 			}
-		}		
+		}
 		that.AlgoMessageBox.resultCB(resultSlice);
 	};
 
@@ -50,7 +50,7 @@ var algorithm = function (){
 		 if (n%5==0) return 5;  
 		 var m = Math.sqrt(n);
 		 for (var i=7;i<=m;i+=30) {
-		  if (n%i==0)      return i;
+		  if ((n%i)==0)	   return i;
 		  if (n%(i+4)==0)  return i+4;
 		  if (n%(i+6)==0)  return i+6;
 		  if (n%(i+10)==0) return i+10;
