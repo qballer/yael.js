@@ -55,13 +55,13 @@ app.init(function(){
 	console.log("Init done");
 });
 //console.log("Session: %j", app);
-
-setInterval(function(){
+var id = setInterval(function(){
 	app.dividerWrapper.pile.run();
 	if (networkSlices.length !==0 ){
 		app.assemblerWrapper.pile.run();
 	}else{
-		console.log("Still Zero");
+		clearInterval(id);
+		console.log("test green");
 	}
 		
 },5);
