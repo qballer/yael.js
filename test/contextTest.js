@@ -6,8 +6,6 @@ var context = require("../lib/context/context"),
 	trio = require("../lib/api/trioPlugin");
 var app = new broadway.App();
 
-// Passes the second argument to `helloworld.attach`.
-
 
 var ctxt = new context();
 var networkSlices = [];
@@ -28,7 +26,6 @@ ctxt.writeToDB = function (slice){
 	console.log(times++);
 };
 ctxt.giveToNetwork = function (slice){
-	debugger;
 	/*
 	TODO
 	give slice to sliceManager
