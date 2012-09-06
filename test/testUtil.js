@@ -5,10 +5,8 @@ var testUtil = function (){
 	
 	that.loadJSONfile =function (filename, encoding) {
 		try {
-			console.log(filename);
 			// default encoding is utf8
 			if (typeof (encoding) === 'undefined') encoding = 'utf8';
-		
 			// read file synchroneously
 			var contents = fs.readFileSync(filename, encoding);
 			// parse contents as JSON
