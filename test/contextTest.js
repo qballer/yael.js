@@ -29,6 +29,10 @@ ctxt.writeToDB = function (slice){
 };
 ctxt.giveToNetwork = function (slice){
 	debugger;
+	/*
+	TODO
+	give slice to sliceManager
+	*/
 	networkSlices.push(slice);
 };
 ctxt.takeResultFromNetwork = function(cb, slice){
