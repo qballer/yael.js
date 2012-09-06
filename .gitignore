@@ -11,6 +11,6 @@ pids
 logs
 results
 node_modules
-data
+datagit
 design
 npm-debug.log
