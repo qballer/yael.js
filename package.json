@@ -1,13 +1,13 @@
 {
+  "name":"yael.js",
   "description": "an extendable distributed system written on top of node.js technology",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "union": "0.3.0",
-    "flatiron": "0.2.6",
     "socket.io":"0.9.10",
-    "director": "1.1.3",
-     "broadway":"0.2.5"
+    "broadway":"0.2.5",
+    "formidable":"1.0.11",
+    "redis":"0.7.2" 
   },
   "devDependencies": {
     "api-easy": "0.3.2",
@@ -19,5 +19,5 @@
   },
   "name": "yael",
   "author": "Tsur, Schneider & Shani",
-  "homepage": "https://github.com/qballer/tssDas"
+  "homepage": "https://github.com/qballer/yael.js"
 }
