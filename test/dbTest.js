@@ -34,3 +34,6 @@ var resultString ="";
 resultString = dbUtil.sliceToString(testSlice);
 console.log("--------result slice string--------");
 console.log(resultString);
+
+if (sliceStr === resultString)
+	console.log("-----------Test Green-----------");
