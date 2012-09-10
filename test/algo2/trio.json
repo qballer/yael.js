@@ -1,0 +1,9 @@
+{
+	"name":"prime",
+	"ver":"1.1.1",
+	"descr":"bla bla bla",
+	"pathToAlgo":"./client/client.js",
+	"pathToAssembler":"./assembler/assembler.js",
+	"pathToDivider":"./divider/divider.js",
+	"pathToFolder":"./data"
+}
