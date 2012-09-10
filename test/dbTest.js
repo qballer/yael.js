@@ -1,6 +1,9 @@
 var nakedSlice = require("../lib/api/etc/nakedSlice");
-var dbUtil = require("../lib/db/dbutil");
-var jsonLoader = require('./testUtil');
+	dbUtil = require("../lib/db/dbutil"),
+	jsonLoader = require('./testUtil'),
+	trioContext = require('../lib/context/trioContext'),
+	path = require('path');
+
 var jsonFile;
 var jsonStr;
 var jsonLen;
@@ -27,7 +30,7 @@ cObj = dbUtil.stringToJsonNArray(sliceStr);
 var testSlice = new nakedSlice(cObj[0].length);
 testSlice.buffer = cObj[0];
 testSlice.jsonAssmeblyObject = cObj[1];
-testSlice.ID = 666;
+testSlice.ID = "6.6.6";
 
 
 var resultString ="";
@@ -37,3 +40,9 @@ console.log(resultString);
 
 if (sliceStr === resultString)
 	console.log("-----------Test Green-----------");
+
+trioContext = new trioContext();
+
+var pathToAlgo = path.resolve('./algo1');
+
+trioContext.startPlugin(pathToAlgo, 1);

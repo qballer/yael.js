@@ -24,15 +24,10 @@ for (var key in trio){
 var times = 0;
 ctxt.writeToDB = function (slice){
 	console.log(times++);
-};
-ctxt.giveToNetwork = function (slice){
-	/*
-	TODO
-	give slice to sliceManager
-	*/
 	networkSlices.push(slice);
 };
-ctxt.takeResultFromNetwork = function(cb, slice){
+
+ctxt.giveToAssembler = function(cb, slice){
 	cb(networkSlices.shift());
 };
 ctxt.grandHalt = function (file){
