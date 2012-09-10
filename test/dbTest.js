@@ -52,10 +52,9 @@ trioContext.startPlugin(pathToAlgo, 1);
 
 var ninja = function(){
 	db.getASlice(function (slice){
-		console.log('ninja:' +slice.ID);
-		db.giveResult(slice);
-		if (slice !== null || slice.ID !== "1.0.100"){
-	//		console.log(slice);
+		if ((slice !== null) && (slice.ID !== "1.0.100")){
+			console.log("ninja slice.id " + slice.ID);
+			db.giveResult(slice);
 			setTimeout(ninja,0);
 		}else{
 			console.log("yep I'm done");
