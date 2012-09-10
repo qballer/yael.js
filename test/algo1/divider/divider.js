@@ -7,13 +7,13 @@ var divider = function (){
 	// call the sliceCB function.
 	that.divide = function (){
 		var slice  = that.DivMessageBox.createSlice();
-		if (times >0){
-			for (var index = 0; index<slice.buffer.length; ++index){
-				slice.buffer[index] = 1;
-			}
-			that.DivMessageBox.sliceCB(slice);
-			--times;
-		} else{
+		var buffer = new Uint16Array(slice.buffer);
+		for (var index = 0; index<buffer.length; ++index){
+				buffer[index] = index;
+		}
+		that.DivMessageBox.sliceCB(slice);
+		--times;
+		if (times === 0){
 			that.DivMessageBox.doneCB();
 		}
 	};

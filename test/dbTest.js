@@ -1,8 +1,11 @@
+
 var nakedSlice = require("../lib/api/etc/nakedSlice");
 	dbUtil = require("../lib/db/dbutil"),
 	jsonLoader = require('./testUtil'),
 	trioContext = require('../lib/context/trioContext'),
-	path = require('path');
+	path = require('path'),
+	db = require('../lib/db/yaeldb');
+	
 
 var jsonFile;
 var jsonStr;
@@ -46,3 +49,23 @@ trioContext = new trioContext();
 var pathToAlgo = path.resolve('./algo1');
 
 trioContext.startPlugin(pathToAlgo, 1);
+
+var ninja = function(){
+	db.getASlice(function (slice){
+		console.log('ninja:' +slice.ID);
+		db.giveResult(slice);
+		if (slice !== null || slice.ID !== "1.0.100"){
+	//		console.log(slice);
+			setTimeout(ninja,0);
+		}else{
+			console.log("yep I'm done");
+		}
+	});
+};
+
+setTimeout(ninja,0);
+
+process.on('exit', function (code, signal){
+	console.log('what?');
+	db.flushDB();
+});
