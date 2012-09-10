@@ -89,12 +89,19 @@
 			<p id ="greeting">Welcome to the <b>Yael.js</b> project, and thank you for participating.</p>
 		
 			<p id="instruction">To begin, please click the <b>Start</b> button below.</p>
-		
-			<div id="buttons">
-				<button type="button" id ="startButton" onclick="yaelClient.genericClient.start()">Start</button>
-				<button type="button" id ="stopButton" onclick="yaelClient.genericClient.stop()" disabled="disabled">Stop</button>
+			<table border="0">
+			<tr>
+			<td>
+				<div id="startButton">
+				<button type="button" id ="startB" onclick="yaelClient.genericClient.start()">Start</button>
 			</div>
-		
+			</td>
+			<td>
+				<div id="stopButton">
+				<button type="button" id ="stopB" onclick="yaelClient.genericClient.stop()" disabled="disabled">Stop</button>
+			</div>
+			</td>
+			</table>
 			<p id = "statusText"></p>
 		
 			<textarea rows="20" cols="70" id="consoleView"  readonly="readonly" ></textarea>
