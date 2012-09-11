@@ -1,25 +1,34 @@
+var fs = require("fs");
+
+
 var assembler = function (){
-	var that = {};
-	var num = 0;
 	
+	var that = {};
+	var index = 1;
+	var writer = fs.createWriteStream("./result.txt", {
+	    flags: "a",
+	    encoding: "encoding",
+	    mode: 0666
+	})
 	// recieve a result to process/aggrigate
 	// slice confirms to the nakedSlice interface
 	that.processResult = function (slice){
-		console.log("Assembler" + slice);
-		console.log("Assembler number" + num);
-		++num;
-		if (num >=  100){
-			setTimeout(0, that.finalResult);
-		}else{
-			that.AssemMessageBox.proccesResultCB();
-		}
+			var view = new Int32Array(slice.buffer);
+			for (var i = 0 ; i < 16 ; i++){
+				if (view[i]!=0){
+					//console.log("Prime numer["+index+"]: "+view[i]);
+					writer.write("Prime number["+index+"]: "+view[i]);
+					index++;
+				}
+		}		
 	};
+
 		
 	// prepare finalresult
 	// when do call finalResultCB from msg box.
 	that.finalResult = function(){
-		console.log("Assem Done");
-		that.AssemMessageBox.finalResultCB();
+		console.log("Assembler is Done");
+		that.AssemMessageBox.finalResultCB("./result.txt");
 	};
 
 	// confirems to the AssemMessageBox interface
@@ -28,7 +37,8 @@ var assembler = function (){
 	// startup assembler.
 	// call initCB.
 	that.init = function (){
-		console.log("Assem init");
+		console.log("Assembler is initiated");
+		AssemMessageBox.initCB();
 	};
 
 	return that;
