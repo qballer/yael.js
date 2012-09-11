@@ -4,7 +4,7 @@ var divider = function (){
 	var image = null;
 	var sliceZero = null;
 	var number = 1;
-	var MaxInt = 33;
+	var MaxInt = 100000;
 
 	// start preparing a slice.
 	// call the sliceCB function.

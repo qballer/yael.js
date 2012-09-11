@@ -4,28 +4,37 @@ var algorithm = function (){
 	// Will be called to run algorithm on slice.
 	// slice confirmes to the nakedslice interface.
 	// call resultCB when done.
-	that.procceSlice = function (object){
-		var resultSlice = new nakedSlice(100);
-		arr = new ArrayBuffer(64);
-		bitView = new Uint8Array(arr);
-		for (var j=0; j<64; j++){
-			that.AlgoMessageBox.logMsg("object.buffer["+j+"]: "+object.buffer[j]);
-			bitView[j] = object.buffer[j];
-			that.AlgoMessageBox.logMsg("arr bit view["+j+"]: "+bitView[j]);
-		}
-		arrView = new Int32Array(arr);
-		for (var i = 0; i<16; i++){
-			that.AlgoMessageBox.logMsg("arrView["+i+"]: "+arrView[i]);
+	that.procceSlice = function (slice){
+		// var resultSlice = new nakedSlice(100);
+		// arr = new ArrayBuffer(64);
+		// bitView = new Uint8Array(arr);
+		// for (var j=0; j<64; j++){
+		// 	that.AlgoMessageBox.logMsg("object.buffer["+j+"]: "+object.buffer[j]);
+		// 	bitView[j] = object.buffer[j];
+		// 	that.AlgoMessageBox.logMsg("arr bit view["+j+"]: "+bitView[j]);
+		// }
+		// arrView = new Int32Array(arr);
+		// for (var i = 0; i<16; i++){
+		// 	that.AlgoMessageBox.logMsg("arrView["+i+"]: "+arrView[i]);
 			
-			if (isPrime(arrView[i])){
-				that.AlgoMessageBox.logMsg("FOUND PRIME: "+arrView[i]);
+		// 	if (isPrime(arrView[i])){
+		// 		that.AlgoMessageBox.logMsg("FOUND PRIME: "+arrView[i]);
+		// 	}
+		// 	else{
+		// 		arrView[i]=0;
+		// 	}
+		// }
+		// resultSlice.buffer = arr;
+		var view = new Int32Array(slice.buffer);
+		for (var i = 0 ; i < 16 ; i++){
+			if (isPrime(view[i])){
+				that.AlgoMessageBox.logMsg("FOUND PRIME: "+view[i]);
 			}
 			else{
-				arrView[i]=0;
+				view[i] = 0;
 			}
 		}
-		resultSlice.buffer = arr;
-		that.AlgoMessageBox.resultCB(resultSlice);
+		that.AlgoMessageBox.resultCB(slice);
 	};
 
 	//objects which linkes to system.
