@@ -38,7 +38,7 @@ var assembler = function (){
 	// call initCB.
 	that.init = function (){
 		console.log("Assembler is initiated");
-		AssemMessageBox.initCB();
+		that.AssemMessageBox.initCB();
 	};
 
 	return that;

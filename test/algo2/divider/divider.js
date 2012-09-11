@@ -22,7 +22,8 @@ var divider = function (){
 			that.DivMessageBox.sliceCB(slice);
 		}
 		else{
-			 that.DivMessageBox.doneCB();
+			console.log("calling doneCB");
+			that.DivMessageBox.doneCB();
 		}
 	};
 	 // function getNewSlice(callback){
