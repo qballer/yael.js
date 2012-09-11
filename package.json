@@ -1,7 +1,7 @@
 {
   "name":"yael.js",
   "description": "an extendable distributed system written on top of node.js technology",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "dependencies": {
     "socket.io":"0.9.10",
