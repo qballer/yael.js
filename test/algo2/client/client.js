@@ -6,9 +6,10 @@ var algorithm = function (){
 	// call resultCB when done.
 	that.procceSlice = function (slice){
 		var resultSlice = new nakedSlice(100);
+		resultSlice.buffer = new Uint32Array(16);
+		resultSlice.buffer = slice.buffer;	
 		for (var i = 0; i<=100; i++){
 			if (isPrime(slice.buffer[i])){
-				resultSlice.buffer[i]=slice.buffer[i];
 				that.AlgoMessageBox.logMsg("FOUND PRIME: "+resultSlice.buffer[i]);
 			}
 			else{

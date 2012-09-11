@@ -4,7 +4,7 @@ var divider = function (){
 	var image = null;
 	var sliceZero = null;
 	var number = 1;
-	var MaxInt = 4294967295;
+	var MaxInt = 1000;
 
 	// start preparing a slice.
 	// call the sliceCB function.
@@ -15,12 +15,13 @@ var divider = function (){
 		    if (number <= MaxInt){
 		        slice.buffer[i]=number;
 		        number++;
-		    	that.DivMessageBox.sliceCB(slice);
 		    }
 		    else{
 		      that.DivMessageBox.doneCB();
+		      break;
 		    }
 		}
+		that.DivMessageBox.sliceCB(slice);
 	};
 	 // function getNewSlice(callback){
   //   var newSlice = new nakedSlice(100);
