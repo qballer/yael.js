@@ -4,24 +4,26 @@ var divider = function (){
 	var image = null;
 	var sliceZero = null;
 	var number = 1;
-	var MaxInt = 1000;
+	var MaxInt = 33;
 
 	// start preparing a slice.
 	// call the sliceCB function.
 	that.divide = function (){
-		var slice  = that.DivMessageBox.createSlice();
-		slice.buffer = new Uint32Array(16);
-		for(var i = 0; i < 16 ; i++){
-		    if (number <= MaxInt){
-		        slice.buffer[i]=number;
-		        number++;
-		    }
-		    else{
-		      that.DivMessageBox.doneCB();
-		      break;
-		    }
+		if (number <= (MaxInt-16)){
+			var slice  = that.DivMessageBox.createSlice();
+			slice.buffer = new ArrayBuffer(64);
+			view = new Int32Array(slice.buffer);
+			for(var i = 0; i < 16 ; i++){
+				console.log("number: " + number);
+				view[i]=number;
+				console.log("view[i]: " + view[i]);
+			    number++;
+			}
+			that.DivMessageBox.sliceCB(slice);
 		}
-		that.DivMessageBox.sliceCB(slice);
+		else{
+			 that.DivMessageBox.doneCB();
+		}
 	};
 	 // function getNewSlice(callback){
   //   var newSlice = new nakedSlice(100);

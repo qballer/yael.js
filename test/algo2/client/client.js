@@ -4,18 +4,27 @@ var algorithm = function (){
 	// Will be called to run algorithm on slice.
 	// slice confirmes to the nakedslice interface.
 	// call resultCB when done.
-	that.procceSlice = function (slice){
+	that.procceSlice = function (object){
 		var resultSlice = new nakedSlice(100);
-		resultSlice.buffer = new Uint32Array(16);
-		resultSlice.buffer = slice.buffer;	
-		for (var i = 0; i<=100; i++){
-			if (isPrime(slice.buffer[i])){
-				that.AlgoMessageBox.logMsg("FOUND PRIME: "+resultSlice.buffer[i]);
+		arr = new ArrayBuffer(64);
+		bitView = new Uint8Array(arr);
+		for (var j=0; j<64; j++){
+			that.AlgoMessageBox.logMsg("object.buffer["+j+"]: "+object.buffer[j]);
+			bitView[j] = object.buffer[j];
+			that.AlgoMessageBox.logMsg("arr bit view["+j+"]: "+bitView[j]);
+		}
+		arrView = new Int32Array(arr);
+		for (var i = 0; i<16; i++){
+			that.AlgoMessageBox.logMsg("arrView["+i+"]: "+arrView[i]);
+			
+			if (isPrime(arrView[i])){
+				that.AlgoMessageBox.logMsg("FOUND PRIME: "+arrView[i]);
 			}
 			else{
-				resultSlice[i]=0;
+				arrView[i]=0;
 			}
 		}
+		resultSlice.buffer = arr;
 		that.AlgoMessageBox.resultCB(resultSlice);
 	};
 
