@@ -18,10 +18,7 @@ var divider = function (){
 			    number++;
 			}
 			slice.buffer = view;
-			for (var i = 0; i < 16 ; i++){
-				console.log("IN DIVIDER GIVING SLICE: "+slice.buffer[i]);	
-			}
-			
+	
 			that.DivMessageBox.sliceCB(slice);
 		}
 		else{
