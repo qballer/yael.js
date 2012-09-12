@@ -19,7 +19,6 @@ var assembler = function (){
 					writer.write(+view[i]+",");
 					console.log("Prime number: "+view[i]);
 				}
-
 		}		
 	};
 
@@ -28,7 +27,7 @@ var assembler = function (){
 	// when do call finalResultCB from msg box.
 	that.finalResult = function(){
 		console.log("Assembler is Done");
-		that.AssemMessageBox.finalResultCB("./result.txt");
+		that.AssemMessageBox.finalResultCB("../../data/result.txt");
 	};
 
 	// confirems to the AssemMessageBox interface
