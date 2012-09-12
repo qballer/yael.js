@@ -16,9 +16,8 @@ var assembler = function (){
 			var view = new Int32Array(slice.buffer);
 			for (var i = 0 ; i < 16 ; i++){
 				if (view[i]!=0){
-					writer.write("Prime number["+index+"]: "+view[i]+"\n");
-					console.log("Prime number["+index+"]: "+view[i]);
-					index++;
+					writer.write(+view[i]+",");
+					console.log("Prime number: "+view[i]);
 				}
 
 		}		

@@ -14,7 +14,6 @@ var algorithm = function (){
 					view[i] = 0;
 				}	
 			}
-		slice.buffer=view;
 		that.AlgoMessageBox.resultCB(slice);
 	};
 

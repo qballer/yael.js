@@ -4,7 +4,7 @@ var divider = function (){
 	var image = null;
 	var sliceZero = null;
 	var number = 1;
-	var MaxInt = /*4294967295*/160;
+	var MaxInt = /*4294967295*/100000;
 
 	// start preparing a slice.
 	// call the sliceCB function.
@@ -18,7 +18,8 @@ var divider = function (){
 			    number++;
 			}
 			slice.buffer = view;
-	
+			console.log("IN DIVIDER MAX INT IS: " +MaxInt);
+			console.log("IN DIVIDER NUMBER IS: " +number);
 			that.DivMessageBox.sliceCB(slice);
 		}
 		else{
