@@ -14,8 +14,10 @@ var assembler = function (){
 	// slice confirms to the nakedSlice interface
 	that.processResult = function (slice){
 			var view = new Int32Array(slice.buffer);
+			for (var i = 0; i < 16 ; i++){
+				console.log("IN PROCESS RESULT GOT SLICE: " + slice.buffer[i]);	
+			}
 			
-			console.log("IN PROCESS RESULT");	
 			console.log("slice.buffer length: " + slice.buffer.byteLength);
 			
 			for (var i = 0 ; i < 16 ; i++){

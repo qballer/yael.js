@@ -15,6 +15,9 @@ var algorithm = function (){
 				}	
 			}
 		slice.buffer=view;
+		for (var i = 0; i < 16 ; i++){
+			console.log("IN CLIENT.JS SENDING RESULT SLICE: "+slice.buffer[i]);
+		}
 		that.AlgoMessageBox.resultCB(slice);
 	};
 
