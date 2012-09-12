@@ -5,7 +5,7 @@ var assembler = function (){
 	
 	var that = {};
 	var index = 1;
-	var writer = fs.createWriteStream("result.txt", {
+	var writer = fs.createWriteStream("../../data/result.txt", {
 	    flags: "a",
 	    encoding: "encoding",
 	    mode: 0666
