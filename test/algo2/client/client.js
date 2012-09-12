@@ -5,26 +5,6 @@ var algorithm = function (){
 	// slice confirmes to the nakedslice interface.
 	// call resultCB when done.
 	that.procceSlice = function (slice){
-		// var resultSlice = new nakedSlice(100);
-		// arr = new ArrayBuffer(64);
-		// bitView = new Uint8Array(arr);
-		// for (var j=0; j<64; j++){
-		// 	that.AlgoMessageBox.logMsg("object.buffer["+j+"]: "+object.buffer[j]);
-		// 	bitView[j] = object.buffer[j];
-		// 	that.AlgoMessageBox.logMsg("arr bit view["+j+"]: "+bitView[j]);
-		// }
-		// arrView = new Int32Array(arr);
-		// for (var i = 0; i<16; i++){
-		// 	that.AlgoMessageBox.logMsg("arrView["+i+"]: "+arrView[i]);
-			
-		// 	if (isPrime(arrView[i])){
-		// 		that.AlgoMessageBox.logMsg("FOUND PRIME: "+arrView[i]);
-		// 	}
-		// 	else{
-		// 		arrView[i]=0;
-		// 	}
-		// }
-		// resultSlice.buffer = arr;
 		var view = new Int32Array(slice.buffer);
 			for (var i = 0 ; i < 16 ; i++){
 				if (isPrime(view[i])){
@@ -34,10 +14,10 @@ var algorithm = function (){
 					view[i] = 0;
 				}	
 			}
-			for (var j = 0 ; j < 16 ; j++){
-				that.AlgoMessageBox.logMsg("view[j]: "+view[j]);
-			}
 		slice.buffer=view;
+		for (var i = 0; i < 16 ; i++){
+			console.log("IN CLIENT.JS SENDING RESULT SLICE: "+slice.buffer[i]);
+		}
 		that.AlgoMessageBox.resultCB(slice);
 	};
 

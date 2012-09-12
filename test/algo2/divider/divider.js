@@ -4,7 +4,7 @@ var divider = function (){
 	var image = null;
 	var sliceZero = null;
 	var number = 1;
-	var MaxInt = /*100000*/160;
+	var MaxInt = /*4294967295*/160;
 
 	// start preparing a slice.
 	// call the sliceCB function.
@@ -13,36 +13,22 @@ var divider = function (){
 			var slice  = that.DivMessageBox.createSlice();
 			slice.buffer = new ArrayBuffer(64);
 			view = new Int32Array(slice.buffer);
-			console.log("IN DIVIDER:");
 			for(var i = 0; i < 16 ; i++){
-				console.log("number: " + number);
 				view[i]=number;
-				console.log("view[i]: " + view[i]);
 			    number++;
 			}
+			slice.buffer = view;
+			for (var i = 0; i < 16 ; i++){
+				console.log("IN DIVIDER GIVING SLICE: "+slice.buffer[i]);	
+			}
+			
 			that.DivMessageBox.sliceCB(slice);
 		}
 		else{
-			console.log("calling doneCB");
+			console.log("Calling doneCB");
 			that.DivMessageBox.doneCB();
 		}
 	};
-	 // function getNewSlice(callback){
-  //   var newSlice = new nakedSlice(100);
-  //   newSlice.id = sliceID++;
-  //   newSlice.buffer = new Uint32Array(16);
-  //   for(var i = 0; i < 16 ; i++){
-  //   if (number <= MaxInt){
-  //         newSlice.buffer[i]=number;
-  //           number++;
-  //      }
-  //      else{
-  //         sliceFlag=false;
-  //      }
-  //    };
-  //   console.log("NEW SLICE ID: " +newSlice.id + "\n\n");
-  //   callback(newSlice);
-  // };
 	
 	//provide slice zero for system.
 	//call getSliceZeroCB.
