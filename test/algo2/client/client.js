@@ -11,7 +11,7 @@ var algorithm = function (){
 					that.AlgoMessageBox.logMsg("FOUND PRIME: "+view[i]);
 				}
 				else{
-					view[i] = 0;
+					slice.buffer[i] = 0;
 				}	
 			}
 		that.AlgoMessageBox.resultCB(slice);
