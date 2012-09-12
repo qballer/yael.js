@@ -13,6 +13,7 @@ var divider = function (){
 			var slice  = that.DivMessageBox.createSlice();
 			slice.buffer = new ArrayBuffer(64);
 			view = new Int32Array(slice.buffer);
+			console.log("IN DIVIDER:");
 			for(var i = 0; i < 16 ; i++){
 				console.log("number: " + number);
 				view[i]=number;

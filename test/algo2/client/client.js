@@ -26,14 +26,18 @@ var algorithm = function (){
 		// }
 		// resultSlice.buffer = arr;
 		var view = new Int32Array(slice.buffer);
-		for (var i = 0 ; i < 16 ; i++){
-			if (isPrime(view[i])){
-				that.AlgoMessageBox.logMsg("FOUND PRIME: "+view[i]);
+			for (var i = 0 ; i < 16 ; i++){
+				if (isPrime(view[i])){
+					that.AlgoMessageBox.logMsg("FOUND PRIME: "+view[i]);
+				}
+				else{
+					view[i] = 0;
+				}	
 			}
-			else{
-				view[i] = 0;
+			for (var j = 0 ; j < 16 ; j++){
+				that.AlgoMessageBox.logMsg("view[j]: "+view[j]);
 			}
-		}
+		slice.buffer=view;
 		that.AlgoMessageBox.resultCB(slice);
 	};
 
