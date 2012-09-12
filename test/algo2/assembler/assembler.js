@@ -20,7 +20,7 @@ var assembler = function (){
 			console.log("slice.buffer length: " + slice.buffer.byteLength);
 			for (var j = 0 ; j < 16 ; j++){
 				console.log("regular buffer: "+slice.buffer[i]);	
-				console.log("bitView: "+bitView[i]);
+				console.log("bitView: "+ view[i]);
 			};
 
 			
