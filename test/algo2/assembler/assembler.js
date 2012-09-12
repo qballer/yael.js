@@ -5,7 +5,7 @@ var assembler = function (){
 	
 	var that = {};
 	var index = 1;
-	var writer = fs.createWriteStream("../../data/result.txt", {
+	var writer = fs.createWriteStream("../../data/result.tss", {
 	    flags: "a",
 	    encoding: "encoding",
 	    mode: 0666
@@ -16,7 +16,7 @@ var assembler = function (){
 			var view = new Int32Array(slice.buffer);
 			for (var i = 0 ; i < 16 ; i++){
 				if (view[i]!=0){
-					writer.write(+view[i]+",");
+					writer.write(+view[i]+",\n");
 					console.log("Prime number: "+view[i]);
 				}
 		}		
@@ -27,7 +27,7 @@ var assembler = function (){
 	// when do call finalResultCB from msg box.
 	that.finalResult = function(){
 		console.log("Assembler is Done");
-		that.AssemMessageBox.finalResultCB("../../data/result.txt");
+		that.AssemMessageBox.finalResultCB("../../data/result.tss");
 	};
 
 	// confirems to the AssemMessageBox interface
